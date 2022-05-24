@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.animal = @animal
     @booking.user = current_user
+    @booking.status = "Pending"
     if @booking.save
       redirect_to root_path
     else
@@ -24,6 +25,6 @@ class BookingsController < ApplicationController
 private
 
   def booking_params
-    params.require(:booking).permit(:date, :animal_id)
+    params.require(:booking).permit(:date)
   end
 end
