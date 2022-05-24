@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %i[delete]
   get 'dashboard', to: "dashboard#display"
+  patch 'accept_booking/:id', to: "bookings#accept_booking", as: :accept_booking
+  patch 'reject_booking/:id', to: "bookings#reject_booking", as: :reject_booking
 end
