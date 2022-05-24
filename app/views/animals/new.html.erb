@@ -1,5 +1,6 @@
-<div class="">
+<div class="container">
 <h2>This is the page to add new animals to the index</h2>
+  <%= link_to "Back to home", root_path, class: 'btn btn-warning' %>
   <div class=“”>
     <div class=“”>
       <h1>New List</h1>
@@ -11,7 +12,7 @@
         <%= f.input :birthday %>
         <%= f.input :bio %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit 'Create animal'%>
+        <%= f.submit 'Create animal', class: 'btn btn-primary'%>
       <% end %>
     </div>
   </div>
