@@ -1,0 +1,25 @@
+<div class="container">
+
+  <h2>This is your dashboard</h2>
+
+  <div class="your_animals">
+    <% @animals.each do |animal| %>
+    <ul>
+      <li><%= animal.name %></li>
+      <li><%= animal.species %></li>
+      <li><%= animal.bio %></li>
+    </ul>
+    <% end %>
+  </div>
+
+  <div class="your_bookings">
+    <% @bookings.each do |booking|%>
+    <ul>
+      <li><%= booking.animal %></li>
+      <li><%= booking.date %></li>
+      <li><%= booking.status %></li>
+    </ul>
+    <% end %>
+  </div>
+
+</div>
