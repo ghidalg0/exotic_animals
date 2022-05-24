@@ -1,7 +1,7 @@
 class AnimalsController < ApplicationController
 
   def index
-    @animal = Animal.all
+    @animals = Animal.all
   end
 
   def show
@@ -9,12 +9,12 @@ class AnimalsController < ApplicationController
   end
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @animal = Animal.new
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = current_user
     @animal = Animal.new(animal_params)
     @animal.user = @user
     if @animal.save

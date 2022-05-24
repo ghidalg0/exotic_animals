@@ -9,8 +9,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.animal = @animal
     @booking.user = current_user
-    if @booking.save!
-      redirect_to new_animal_booking_path(@booking)
+    if @booking.save
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end

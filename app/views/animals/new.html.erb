@@ -1,0 +1,18 @@
+<div class="">
+<h2>This is the page to add new animals to the index</h2>
+  <div class=“”>
+    <div class=“”>
+      <h1>New List</h1>
+      <%= simple_form_for(@animal) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :species %>
+        <%= f.input :category %>
+        <%= f.input :location %>
+        <%= f.input :birthday %>
+        <%= f.input :bio %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit 'Create animal'%>
+      <% end %>
+    </div>
+  </div>
+</div>

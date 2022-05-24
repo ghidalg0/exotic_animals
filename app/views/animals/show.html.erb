@@ -1,0 +1,15 @@
+<div class="container">
+<%= link_to "Back to all animals", root_path %> <br>
+<%= link_to "Rent this animal", new_animal_booking_path(@animal) %> <br>
+<%= @animal.name %> <br>
+<%= @animal.bio %><br>
+<%= @animal.species %><br>
+<%= @animal.location %><br>
+<%= @animal.birthday %><br>
+<% @animal.bookings.each do |booking| %>
+<ul>
+<li><%= booking.date %></li>
+<li><%= booking.status %></li>
+</ul>
+<% end %>
+</div>
