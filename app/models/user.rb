@@ -8,7 +8,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :nickname, presence: true, uniqueness: true
-  validates :first_name, presences: true
-  validates :last_name, presences: true
-  validates :address, presences: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :address, presence: true
 end
