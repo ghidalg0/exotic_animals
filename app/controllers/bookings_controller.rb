@@ -2,11 +2,13 @@ class BookingsController < ApplicationController
   def new
     @animal = Animal.find(params[:animal_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @animal = Animal.find(params[:animal_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.animal = @animal
     @booking.user = current_user
     @booking.status = "Pending"
@@ -18,6 +20,7 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
     redirect_to bookings_path, status: :see_other
   end
