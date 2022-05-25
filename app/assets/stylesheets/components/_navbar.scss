@@ -1,35 +1,91 @@
-img{
-  width: 32px;
-  height: 32px;
+
+h1 {
+  font-weight: bolder;
+  margin: 0px;
+  font-size: 40px;
 }
-ul{
+
+.navbar-exotica {
+  background-color: #F0DFCE;
   display: flex;
-  list-style-type: none;
   align-items: center;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
 }
-li a{
+
+.logo-title {
+  display: flex;
+  align-items: center;
+}
+
+.Exotica-title {
+  padding: 15px;
+  text-align: center;
+}
+
+.Exotica-logo {
+  padding: 5px;
+  margin: 10px;
+}
+
+.controls {
+  margin-right: 15px;
+}
+
+.btn-add {
+  background-color: #F0DFCE;
   text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-right: 8px;
+  color: #000000;
+  background-color: #019E89;
+  border: #019E89 solid 1px;
+  font-weight: bolder;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.01);
+  opacity: 0.8;
 }
-/* 방문하지 않은 링크 */
-li a:link{
-  color: black;
+
+.btn-dashboard {
+  background-color: #F0DFCE;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-right: 8px;
+  background-color: #FFBF2E;
+  border: #FFBF2E solid 1px;
+  color: #000000;
+  font-weight: bolder;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.01);
+  opacity: 0.8;
 }
-/* 방문한 링크 */
-li a:visited{
-  color: black;
+
+.btn-out {
+  background-color: #F0DFCE;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 8px;
+  margin-right: 8px;
+  background-color: #F0DFCE;
+  color: #000000;
+  font-weight: bolder;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.01);
+  border: #FFBF2E solid 1px;
+  box-sizing: border-box;
 }
-/* 링크를 활성화 할 때 */
-li a:active{
-  color: black;
+
+.btn-add:hover {
+  opacity: 1;
+  color: white;
 }
-li{
-  padding: 16px;
+
+.btn-dashboard:hover {
+  opacity: 1;
+  color: white;
 }
-li:first-child{
-  margin-right: auto;
-}
-li:not(:first-child) a:hover{
-  border-bottom: 2px solid black;
+
+.btn-out:hover {
+  color: white;
+  background-color: #000000;
+  border: none;
+
 }
