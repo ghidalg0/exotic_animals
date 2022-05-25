@@ -1,7 +1,10 @@
-<div class="container">
-<h3>New Booking</h1>
-<%= simple_form_for [@animal, @booking] do |f| %>
-        <%= f.input :date %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
+<div class="container mb-5">
+<%= link_to "Back to animal", animal_path(@animal), class:'btn-back' %> <br>
+</div>
+<div class="form-container">
+  <h3>New Booking</h1>
+  <%= simple_form_for [@animal, @booking] do |f| %>
+          <%= f.input :date %>
+          <div class='center'><%= f.submit class: 'btn btn-add' %></div>
+        <% end %>
 </div>

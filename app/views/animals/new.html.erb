@@ -1,9 +1,8 @@
-<div class="container">
-<h2>This is the page to add new animals to the index</h2>
-  <%= link_to "Back to home", root_path, class: 'btn btn-warning' %>
-  <div class=“”>
-    <div class=“”>
-      <h1>New List</h1>
+<div class="container mb-5">
+  <%# <%= link_to "Back to home", root_path, class: 'btn btn-back' %>
+
+    <div class="form-container">
+      <h3>Add my Animal</h3>
       <%= simple_form_for(@animal) do |f| %>
         <%= f.input :name %>
         <%= f.input :species %>
@@ -12,8 +11,9 @@
         <%= f.input :birthday %>
         <%= f.input :bio %>
         <%= f.input :photo, as: :file %>
-        <%= f.submit 'Create animal', class: 'btn btn-primary'%>
+        <div class='center-btn'><%= f.submit 'Add', class: 'btn-add'%></div>
       <% end %>
+
     </div>
-  </div>
+
 </div>
