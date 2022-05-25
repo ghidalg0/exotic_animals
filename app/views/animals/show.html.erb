@@ -1,17 +1,33 @@
 <div class="container">
-<%= link_to "Back to all animals", root_path %> <br>
-<%= link_to "Rent this animal", new_animal_booking_path(@animal) %> <br>
-<%= cl_image_tag(@animal.photo.key,
-      width: 400, height: 300) %>
-<%= @animal.name %> <br>
-<%= @animal.bio %><br>
-<%= @animal.species %><br>
-<%= @animal.location %><br>
-<%= @animal.birthday %><br>
-<% @animal.bookings.each do |booking| %>
-<ul>
-<li><%= booking.date %></li>
-<li><%= booking.status %></li>
-</ul>
-<% end %>
+  <%= link_to "Back to all animals", root_path, class:'btn-back' %> <br>
+
+  <div class='animal-container'>
+
+    <div class="animal-picture w-50">
+        <%= cl_image_tag(@animal.photo.key)%>
+    </div>
+
+    <div class="animal-info w-50">
+
+      <div class="animal-specs">
+        <%= @animal.name%><br>
+        <%= @animal.species %><br>
+        <%= @animal.bio %><br>
+        <%= @animal.location %><br>
+        <%= @animal.birthday %><br>
+      </div>
+
+      <div class='btn-rent'>
+        <%# <% if !(current_user = @animal.user) %>
+          <%= link_to "Rent this animal", new_animal_booking_path(@animal), class: "btn-add" %> <br>
+        <%# <% end %>
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
 </div>
