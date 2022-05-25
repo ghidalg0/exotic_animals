@@ -3,18 +3,24 @@
 
   <div class='animal-container'>
 
-    <div class="animal-picture w-50">
+    <div class="animal-picture">
         <%= cl_image_tag(@animal.photo.key, width: 600)%>
     </div>
 
     <div class="animal-info w-50">
 
       <div class="animal-specs">
-        <%= @animal.name%><br>
-        <%= @animal.species %><br>
-        <%= @animal.bio %><br>
-        <%= @animal.location %><br>
-        <%= @animal.birthday %><br>
+
+        Name: <%= @animal.name%><br>
+
+        Species: <%= @animal.species %><br>
+
+        Location: <%= @animal.location %><br>
+
+        Birthday: <%= @animal.birthday %><br>
+
+        Bio: <%= @animal.bio %>
+
       </div>
 
       <div class='btn-rent'>
