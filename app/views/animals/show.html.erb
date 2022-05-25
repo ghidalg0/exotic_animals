@@ -4,7 +4,7 @@
   <div class='animal-container'>
 
     <div class="animal-picture w-50">
-        <%= cl_image_tag(@animal.photo.key)%>
+        <%= cl_image_tag(@animal.photo.key, width: 600)%>
     </div>
 
     <div class="animal-info w-50">
@@ -18,9 +18,9 @@
       </div>
 
       <div class='btn-rent'>
-        <%# <% if !(current_user = @animal.user) %>
-          <%= link_to "Rent this animal", new_animal_booking_path(@animal), class: "btn-add" %> <br>
-        <%# <% end %>
+        <% if !(current_user == @animal.user) %>
+          <%= link_to "Rent this animal", new_animal_booking_path(@animal), class: "btn-add" %>
+        <% end %>
       </div>
 
 
