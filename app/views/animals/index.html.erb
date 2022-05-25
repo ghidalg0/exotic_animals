@@ -7,10 +7,10 @@
         <img src="<%= cl_image_path animal.photo.key %>" />
         <div class="card-trip-infos">
           <div>
-            <%= link_to animal.name, animal_path(animal) %>
+            <strong><%= link_to animal.name, animal_path(animal), class: "name" %></strong>
             <p><%= animal.category %></p>
           </div>
-          <h2 class="card-trip-pricing"><%= animal.location %></h2>
+          <P class="card-trip-pricing"><%= animal.location %></p>
         </div>
       </div>
     <% end %>
