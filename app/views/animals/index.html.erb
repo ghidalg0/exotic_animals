@@ -1,9 +1,23 @@
 <div class="container">
 <h2>This is the home page</h2>
 <% if user_signed_in? %>
-  <% @animals.each do |animal| %>
-  <br><%= link_to animal.name, animal_path(animal) %> <br>
-  <% end %>
+  <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: 'btn btn-danger'%><br>
+  <%= link_to "Add new animal", new_animal_path, class: 'btn btn-primary'%> <br>
+  <%= link_to "My Dashboard", dashboard_path, class: 'btn btn-info' %>
+  <div class="cards">
+    <% @animals.each do |animal| %>
+      <div class="card-trip">
+        <img src="<%= cl_image_path animal.photo.key %>" />
+        <div class="card-trip-infos">
+          <div>
+            <%= link_to animal.name, animal_path(animal) %>
+            <p><%= animal.category %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= animal.location %></h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
 <% else %>
   <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary' %> <br>
   <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-info' %><br>
