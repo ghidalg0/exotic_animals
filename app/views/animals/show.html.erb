@@ -1,6 +1,8 @@
 <div class="container">
 <%= link_to "Back to all animals", root_path %> <br>
 <%= link_to "Rent this animal", new_animal_booking_path(@animal) %> <br>
+<%= cl_image_tag(@animal.photo.key,
+      width: 400, height: 300) %>
 <%= @animal.name %> <br>
 <%= @animal.bio %><br>
 <%= @animal.species %><br>
