@@ -7,9 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 #### clean the database
+Booking.destroy_all
 Animal.destroy_all
 User.destroy_all
-Booking.destroy_all
 
 #### URL of images
 roro = URI.open("https://france3-regions.francetvinfo.fr/image/8OVJlPTX-v3XtoSxQMa-LlKm_8I/930x620//filters:format(webp)/regions/2020/06/09/5edf9fc1091d0_alpaca-4151170_1920-4808572.jpg")
