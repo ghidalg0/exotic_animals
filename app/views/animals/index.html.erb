@@ -5,6 +5,8 @@
   <%= link_to "Add new animal", new_animal_path, class: 'btn btn-primary'%> <br>
   <%= link_to "My Dashboard", dashboard_path, class: 'btn btn-info' %>
   <% @animals.each do |animal| %>
+  <%= cl_image_tag(animal.photo.key,
+      width: 500, height: 400) %>
   <br><%= link_to animal.name, animal_path(animal) %> <br>
   <% end %>
 <% else %>
