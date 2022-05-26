@@ -1,6 +1,7 @@
 <div class="container">
-  <%= link_to "Back to all animals", root_path, class:'btn-back' %> <br>
-
+  <%= link_to animals_path, class:'btn-back' do %>
+    <i class="fa-solid fa-angle-left"></i>
+  <% end %>
   <div class='animal-container'>
 
     <div class="animal-picture">
