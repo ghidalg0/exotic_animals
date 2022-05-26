@@ -16,13 +16,24 @@
 					<a class="current-demo" href="index2.html" title="Felix the CSS/SVG Fox"><img src="img/link-fox.png" alt="Felix the Fox"/></a>
 				</nav> -->
 			</header>
-			<div class="content content--fox">
           <div class="claim">
             <h2>Rent the most exotic animals !</h2>
             <h2>Impress your friends with uncommon animals !</h2>
             <p>Exotica is the most well none platform for an amazing experience.</p>
-            <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary' %>
+            <div id="search">
+              <%= form_tag animals_path, method: :get, class: "d-flex" do %>
+                <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Find an animal"
+                %>
+                <%= button_tag :submit, class: "btn btn-primary" do %>
+                  <i class="fas fa-search"></i>
+                  <% end %>
+              <% end %>
+            </div>
           </div>
+			<div class="content content--fox">
 				<div class="fox">
 					<div class="fox-body">
 						<div class="fox-front-leg"></div>

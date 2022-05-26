@@ -2,10 +2,6 @@
   position: relative;
 }
 
-.demo-fox {
-
-}
-
 .claim {
   margin-top: 250px;
   margin-left: 100px;
@@ -15,6 +11,11 @@
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   z-index: 1;
+  position: absolute;
+}
+
+#search {
+  z-index: 1000;
 }
 
 .codrops-header h1 {
