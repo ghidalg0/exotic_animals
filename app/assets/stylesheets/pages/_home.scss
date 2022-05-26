@@ -3,3 +3,23 @@
   text-decoration: none;
   color: black;
 }
+
+#animal-map {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin-left: 15px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+}
+
+.index-cards {
+  width: 50%;
+  margin-right: 15px;
+}
+
+.index-cont {
+  display: flex;
+}
