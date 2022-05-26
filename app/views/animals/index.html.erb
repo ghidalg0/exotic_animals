@@ -1,6 +1,6 @@
 <div class="container">
 <h2 class='text-center my-5'>All Animals</h2>
-<% if user_signed_in? %>
+
   <div class="index-cont">
     <div class="cards index-cards">
       <% @animals.each do |animal| %>
@@ -23,11 +23,4 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id="animal-map">
     </div>
   </div>
-
-
-
-<% else %>
-  <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary' %> <br>
-  <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-info' %><br>
-<% end %>
 </div>

@@ -1,0 +1,84 @@
+<%# <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
+</div> %>
+
+<div class="demo-fox">
+		<div>
+			<header class="codrops-header">
+				<div class="codrops-links">
+				</div>
+				<!-- <nav class="codrops-demos">
+					<a href="index.html" title="Alex the CSS Husky"><img src="img/link-husky.png" alt="Alex the Husky"/></a>
+					<a class="current-demo" href="index2.html" title="Felix the CSS/SVG Fox"><img src="img/link-fox.png" alt="Felix the Fox"/></a>
+				</nav> -->
+			</header>
+			<div class="content content--fox">
+          <div class="claim">
+            <h2>Rent the most exotic animals !</h2>
+            <h2>Impress your friends with uncommon animals !</h2>
+            <p>Exotica is the most well none platform for an amazing experience.</p>
+            <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary' %>
+          </div>
+				<div class="fox">
+					<div class="fox-body">
+						<div class="fox-front-leg"></div>
+						<div class="fox-front-leg"></div>
+					</div>
+					<div class="fox-head">
+						<div class="fox-face">
+							<div class="fox-ears">
+								<div class="fox-ear"></div>
+								<div class="fox-ear"></div>
+							</div>
+							<div class="fox-skull"></div>
+							<div class="fox-front"></div>
+							<div class="fox-eyes"></div>
+							<div class="fox-nose"></div>
+						</div>
+					</div>
+					<div class="fox-tail">
+						<div class="fox-tail">
+							<div class="fox-tail">
+								<div class="fox-tail">
+									<div class="fox-tail">
+										<div class="fox-tail">
+											<div class="fox-tail">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+					<defs>
+						<filter id="squiggly-0">
+							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+							<feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+						</filter>
+						<filter id="squiggly-1">
+							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+							<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+						</filter>
+						<filter id="squiggly-2">
+							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+							<feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+						</filter>
+						<filter id="squiggly-3">
+							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
+							<feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+						</filter>
+						<filter id="squiggly-4">
+							<feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
+							<feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+						</filter>
+					</defs>
+				</svg>
+			</div><!-- /content -->
+		</div><!-- /container -->
+	</div>
