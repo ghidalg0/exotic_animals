@@ -3,20 +3,17 @@ class AnimalsController < ApplicationController
 
   def index
     @animals = Animal.all
-
     if params[:query].present?
-      @animals = Animal.where(species: params[:query])
+      @animals = Animal.where("species ILIKE ?", "%#{params[:query]}%")
     else
       @animals = Animal.all
     end
-    
     @markers = @animals.geocoded.map do |animal|
       {
         lat: animal.latitude,
         lng: animal.longitude,
         info_window: render_to_string(partial: "info_window", locals: { animal: animal })
       }
-
     end
   end
 
