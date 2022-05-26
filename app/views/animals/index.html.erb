@@ -1,6 +1,5 @@
 <div class="container">
-<h2 class='text-center'>All Animals</h2>
-<% if user_signed_in? %>
+  <h2 class='text-center'>All Animals</h2>
   <div class="cards">
     <% @animals.each do |animal| %>
       <div class="card-trip">
@@ -15,8 +14,4 @@
       </div>
     <% end %>
   </div>
-<% else %>
-  <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary' %> <br>
-  <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-info' %><br>
-<% end %>
 </div>
