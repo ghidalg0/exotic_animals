@@ -1,4 +1,10 @@
 class Animal < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search_animals,
+  against: %i[name species category],
+  using: {
+    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+  }
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
   has_one_attached :photo
