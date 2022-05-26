@@ -4,7 +4,12 @@
   <div class="cards">
     <% @animals.each do |animal| %>
       <div class="card-trip">
-        <img src="<%= cl_image_path animal.photo.key %>" />
+      <% if animal.photo == nil  %>
+       <img src="https://unsplash.com/photos/kUHfMW8awpE"/>
+      <% else %>
+        <%= cl_image_tag animal.photo.key %>
+      <% end %>
+
         <div class="card-trip-infos">
           <div>
             <strong><%= link_to animal.name, animal_path(animal), class: "name" %></strong>
