@@ -6,6 +6,8 @@ ruby "3.0.3"
 gem "devise"
 gem "pundit"
 
+gem "geocoder"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 

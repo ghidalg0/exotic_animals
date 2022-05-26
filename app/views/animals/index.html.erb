@@ -1,17 +1,26 @@
 <div class="container">
-  <h2 class='text-center'>All Animals</h2>
-  <div class="cards">
-    <% @animals.each do |animal| %>
-      <div class="card-trip">
-        <img src="<%= cl_image_path animal.photo.key %>" />
-        <div class="card-trip-infos">
-          <div>
-            <strong><%= link_to animal.name, animal_path(animal), class: "name" %></strong>
-            <p><%= animal.category %></p>
+<h2 class='text-center my-5'>All Animals</h2>
+
+  <div class="index-cont">
+    <div class="cards index-cards">
+      <% @animals.each do |animal| %>
+        <div class="card-trip">
+          <img src="<%= cl_image_path animal.photo.key %>" />
+          <div class="card-trip-infos">
+            <div>
+              <strong><%= link_to animal.name, animal_path(animal), class: "name" %></strong>
+              <p><%= animal.category %></p>
+            </div>
+            <P class="card-trip-pricing"><%= animal.location %></p>
           </div>
-          <P class="card-trip-pricing"><%= animal.location %></p>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
+    <div
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>" id="animal-map">
+    </div>
   </div>
 </div>
