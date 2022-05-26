@@ -1,40 +1,83 @@
 <div class="container">
 
-  <h2>This is your dashboard</h2>
+  <h2>My dashboard</h2>
 
   <%= link_to "Back to home", root_path, class: 'btn btn-warning' %>
 
   <div class="your_animals">
-    <p> My animals</p>
+    <br>
+    <h3>My animals</h3>
     <% @animals.each do |animal| %>
-      <ul>
-        <li><%= animal.name %></li>
-        <li><%= animal.species %></li>
-        <li><%= animal.bio %></li>
-        <ul>
-          <% animal.bookings.each do |b| %>
-            <li>Booking <%= b.status %> for <%= b.date %></li>
-            <% if policy(b).accept_booking? %>
-              <%= link_to "Accept booking", accept_booking_path(b), data: {turbo_method: :patch} %>
-            <% end %>
-            <% if policy(b).reject_booking? %>
-              <%= link_to "Reject booking", reject_booking_path(b), data: {turbo_method: :patch} %>
-            <% end %>
-          <% end %>
-        </ul>
-      </ul>
+      <% if animal.bookings.length != 0 %>
+        <% animal.bookings.each do |b| %>
+          <div class="card-product">
+            <img src="<%= cl_image_path animal.photo.key, height: 120, width: 120, crop: :fill %>" />
+            <div class="card-product-infos w-100">
+              <div class="d-flex justify-content-between">
+                <div>
+                  <h4><%= animal.name %></h4>
+                  <p><%= animal.species %></p>
+                </div>
+                <div class="w-25">
+                    <div class="row text-center">
+                      <p>Booking <%= b.status %> for <%= b.date %></p>
+                    </div>
+                    <div class="row">
+                      <% if policy(b).accept_booking? %>
+                        <%= link_to "Accept booking", accept_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-primary" %>
+                      <% end %>
+                    </div>
+                    <div class="row">
+                      <% if policy(b).reject_booking? %>
+                        <%= link_to "Reject booking", reject_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-danger" %>
+                      <% end %>
+                    </div>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="card-product">
+          <img src="<%= cl_image_path animal.photo.key, height: 120, width: 120, crop: :fill %>" />
+          <div class="card-product-infos w-100">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h4><%= animal.name %></h4>
+                <p><%= animal.species %></p>
+              </div>
+              <div class="w-25">
+                <div class="row text-center">
+                  <p>no booking yet</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
-
-  <div class="your_bookings">
-    <p> My bookings</p>
-    <% @bookings.each do |booking|%>
-      <ul>
-        <li><%= booking.animal.name %></li>
-        <li><%= booking.date %></li>
-        <li><%= booking.status %></li>
-      </ul>
-    <% end %>
+  <br>
+  <div class="your_animals">
+    <h3>My bookings</h3>
+      <% @bookings.each do |booking|%>
+        <div class="card-product">
+        <img src="<%= cl_image_path booking.animal.photo.key, height: 120, width: 120, crop: :fill %>" />
+          <div class="card-product-infos w-100">
+            <div class="d-flex justify-content-between">
+              <div>
+                <h4><%= booking.animal.name %></h4>
+                <p><%= booking.animal.species %></p>
+              </div>
+              <div class="w-25 text-center">
+                <p>Booked for <%= booking.date %></p>
+                <p>Booking <%= booking.status %></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-
 </div>
