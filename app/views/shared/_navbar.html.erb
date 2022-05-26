@@ -10,6 +10,19 @@
       </div>
     </div>
 
+    <div>
+      <%= form_tag animals_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find an animal"
+        %>
+        <%= button_tag :submit, class: "btn btn-primary" do %>
+          <i class="fas fa-search"></i>
+          <% end %>
+      <% end %>
+    </div>
+
     <div class='controls'>
       <%= link_to "Add my animal", new_animal_path, class: 'btn-add'%>
       <%= link_to "My Dashboard", dashboard_path, class: 'btn-dashboard' %>
