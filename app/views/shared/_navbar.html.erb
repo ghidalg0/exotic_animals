@@ -34,4 +34,22 @@
 
 <% else %>
 
+  <div class="navbar-exotica-logout sticky-top">
+      <div class="logo-title">
+        <div class='Exotica-logo'>
+          <%= image_tag "logo.png", alt: "Exotica", width: 80, height: 80, class: "d-inline-block align-text-top rounded-circle" %>
+        </div>
+        <div class='Exotica-title'>
+          <h1>Exotica</h1>
+        </div>
+      </div>
+
+      <div class='controls'>
+        <%= link_to "Sign in", new_user_session_path, class: 'btn-add' %>
+        <%= link_to "Sign up", new_user_registration_path, class: 'btn-dashboard' %>
+
+      </div>
+
+    </div>
+
 <% end %>
