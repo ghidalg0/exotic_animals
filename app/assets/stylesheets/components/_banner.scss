@@ -2,12 +2,16 @@
   position: relative;
 }
 
+.demo-fox {
+
+}
+
 .claim {
-  margin-top: 80px;
-  margin-left: 20px;
+  margin-top: 250px;
+  margin-left: 100px;
   padding: 40px;
   width: 45%;
-  background-color: rgba(255,255,255,0.6);
+  background-color: rgba(255,255,255,0.8);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 15px;
   z-index: 1;
@@ -23,11 +27,11 @@
 .content--fox {
   background: #99bfcf url("landscape.jpg") no-repeat 50% 100%;
   background-size: cover;
-  position: absolute;
+  // position: absolute;
   pointer-events: none;
   top: 0;
   width: 100%;
-  height: 70vh;
+  height: 100vh;
   overflow: hidden;
   left: 50%;
   -webkit-transform: translateX(-50%);
