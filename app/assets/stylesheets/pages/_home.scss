@@ -1,5 +1,50 @@
 // Specific CSS for your home-page
-.name {
-  text-decoration: none;
-  color: black;
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+#animal-map {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  margin-left: 15px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+
+}
+
+.index-cards {
+  width: 50%;
+  margin-right: 15px;
+}
+
+.index-cont {
+  display: flex;
 }

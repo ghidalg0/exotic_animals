@@ -24,7 +24,7 @@
       </div>
 
       <div class='btn-rent'>
-        <% if !(current_user == @animal.user) %>
+        <% if !(current_user == @animal.user) && user_signed_in? %>
           <%= link_to "Rent this animal", new_animal_booking_path(@animal), class: "btn-add" %>
         <% end %>
       </div>

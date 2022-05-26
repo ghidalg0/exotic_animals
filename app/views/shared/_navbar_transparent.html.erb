@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 
-  <div class="navbar-exotica">
+  <div class="navbar-transparent">
     <div class="logo-title">
       <div class='Exotica-logo'>
         <%= image_tag "logo.png", alt: "Exotica", width: 80, height: 80, class: "d-inline-block align-text-top rounded-circle" %>
@@ -8,19 +8,6 @@
       <div class='Exotica-title'>
         <h1>Exotica</h1>
       </div>
-    </div>
-
-    <div>
-      <%= form_tag animals_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find an animal"
-        %>
-        <%= button_tag :submit, class: "btn btn-primary" do %>
-          <i class="fas fa-search"></i>
-          <% end %>
-      <% end %>
     </div>
 
     <div class='controls'>
