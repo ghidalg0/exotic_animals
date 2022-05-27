@@ -30,7 +30,7 @@ justify-content: space-between;
 .btn-back {
   padding: 10px 20px;
   border: #a5a2a2 solid 1px;
-  background-color: #bab2b2;
+  background-color: transparent;
   color: black;
   text-decoration: none;
   border-radius: 50%;
@@ -41,7 +41,7 @@ justify-content: space-between;
 }
 
 .btn-back:hover {
-  color: white;
+  color: black;
   opacity: 1;
 }
 
@@ -77,4 +77,8 @@ justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   width: 6em
+}
+
+.btn-add {
+  margin: 0 70px;
 }

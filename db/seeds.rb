@@ -21,6 +21,8 @@ ali = URI.open("https://www.larousse.fr/encyclopedie/data/images/1316111-dromada
 richard = URI.open("https://bricoleurs.info/wp-content/uploads/2021/09/Est-ce-que-le-buffle-se-mange.jpg")
 martin = URI.open("https://www.mairie-craponne.fr/fileadmin/_processed_/7/1/csm_BP_-_Mission_herisson_9bdadffa58.png")
 lancelot = URI.open("https://i.skyrock.net/2404/61082404/pics/3313490386_1_2_Y0SlqRxL.jpg")
+bigteeth = URI.open("https://static.lpnt.fr/images/2020/06/09/20430100lpw-20430110-article-crocodile-espagne-jpg_7161420_1250x625.jpg")
+volovo = URI.open("https://www.madmoizelle.com/wp-content/uploads/2021/02/girafe.jpg")
 
 #### user and animal creations
 user_01 = User.create!(email: "guilhem@lewagon.fr", password: "azerty", nickname: "Gigi", first_name: "Guilhem", last_name: "Lewagon", address: "Paris" )
@@ -55,6 +57,10 @@ animal_0302.save!
 animal_0303 = Animal.new({ name: "Richard", species: "buffalo", location: "Amiens", category: "grumpy", birthday: Date.new(2018, 12, 03), bio: "Take care of me if you want me to smile !", user: user_03 })
 animal_0303.photo.attach(io: richard, filename: "buffalo")
 animal_0303.save!
+####
+animal_0304 = Animal.new({ name: "Volovo", species: "giraffe", location: "Bordeaux", category: "grumpy", birthday: Date.new(2019, 12, 03), bio: "I can see everything from my height !", user: user_03 })
+animal_0304.photo.attach(io: volovo, filename: "giraffe")
+animal_0304.save!
 
 user_04 = User.create!(email: "patrick@lewagon.fr", password: "azerty", nickname: "Pat", first_name: "Patrick", last_name: "Lewagon", address: "Paris" )
 ####
@@ -65,3 +71,7 @@ animal_0401.save!
 animal_0402 = Animal.new({ name: "Lancelot", species: "golden rooster", location: "Maubeuge", category: "capricious", birthday: Date.new(2019, 12, 03), bio: "I'm the king ! I need everything on this planet !", user: user_04 })
 animal_0402.photo.attach(io: lancelot, filename: "golden rooster")
 animal_0402.save!
+####
+animal_0403 = Animal.new({ name: "Big Teeth", species: "crocodile", location: "Sete", category: "capricious", birthday: Date.new(2018, 12, 03), bio: "I will EAT you and everything around you !", user: user_04 })
+animal_0403.photo.attach(io: bigteeth, filename: "super croco")
+animal_0403.save!

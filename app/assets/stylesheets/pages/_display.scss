@@ -28,11 +28,15 @@
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
+}
+
+.dash-cont {
+  margin-top: 25px;
+
 }
 
 .dash-animal {
@@ -41,4 +45,43 @@
 
 .dash-bookings {
   width: 45%;
+}
+
+.animal-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.btn-accept {
+  margin-left: 15px;
+  border-radius: 8px;
+  background-color: #019E89;
+  color: white;
+  opacity: 0.8;
+}
+
+.btn-reject {
+  margin-left: 5px;
+  border-radius: 8px;
+  width: 40px;
+  background-color: white;
+  color: #e6b686;
+  border: #e6b686 solid 1px;
+}
+
+.btn-accept:hover {
+  opacity: 1;
+  color: white;
+}
+
+.btn-reject:hover {
+  background-color: #e6b686;
+  color: white;
+
 }
