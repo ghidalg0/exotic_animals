@@ -4,29 +4,32 @@
   <% end %>
   <div class='animal-container'>
 
-    <div class="animal-picture">
-        <%= cl_image_tag(@animal.photo.key, width: 600)%>
+    <div class="animal-picture" >
+        <%= cl_image_tag(@animal.photo.key, width: 600, radius: 15)%>
     </div>
 
     <div class="animal-info w-50">
 
       <div class="animal-specs">
-
-        Name: <%= @animal.name.capitalize%><br>
-
-        Species: <%= @animal.species.capitalize %><br>
-
-        Location: <%= @animal.location.capitalize %><br>
-
-        Birthday: <%= @animal.birthday %><br>
-
-        Bio: <%= @animal.bio %>
-
+        <div class="first-info">
+          <h2 class="animal-title text-center mt-2 mb-5">
+            <%= @animal.name.capitalize %>
+          </h2>
+          <div class="icone d-flex justify-content-around my-3">
+            <p><i class="fa-solid fa-paw"></i>
+            <%= @animal.species.capitalize %><br></p>
+            <p><i class="fa-solid fa-cake-candles"></i>
+            <%= @animal.birthday %><br></p>
+            <p><i class="fa-solid fa-location-dot"></i>
+            <%= @animal.location.capitalize %><br></p>
+          </div>
+        </div>
+        <p class='text-center my-3 pt-3'><%= @animal.bio %></p>
       </div>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
+      <button type="button" class="btn-add modal-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Rent this animal
       </button>
 
       <!-- Modal -->
