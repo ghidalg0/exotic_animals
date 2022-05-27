@@ -20,14 +20,15 @@
             <h2>Rent the most exotic animals !</h2>
             <h2>Impress your friends with uncommon animals !</h2>
             <p>Exotica is the most well none platform for an amazing experience.</p>
-            <div id="search">
-              <%= form_tag animals_path, method: :get, class: "d-flex" do %>
+
+            <div id="search" class='search-exotica'>
+              <%= form_tag animals_path, method: :get, class: "search-content-exotica" do %>
                 <%= text_field_tag :query,
                   params[:query],
-                  class: "form-control",
+                  class: "form-exotica",
                   placeholder: "Find an animal"
                 %>
-                <%= button_tag :submit, class: "btn btn-primary" do %>
+                <%= button_tag :submit, class: "btn-search" do %>
                   <i class="fas fa-search"></i>
                   <% end %>
               <% end %>

@@ -2,7 +2,9 @@
 
   <h2>My dashboard</h2>
 
-  <%= link_to "Back to home", root_path, class: 'btn btn-warning' %>
+  <%= link_to animals_path, class:'btn-back' do %>
+    <i class="fa-solid fa-angle-left"></i>
+  <% end %>
 
   <div class="your_animals">
     <br>
@@ -11,12 +13,14 @@
       <% if animal.bookings.length != 0 %>
         <% animal.bookings.each do |b| %>
           <div class="card-product">
-            <img src="<%= cl_image_path animal.photo.key, height: 120, width: 120, crop: :fill %>" />
+            <%= link_to animal_path(animal), do %>
+              <img src="<%= cl_image_path animal.photo.key, height: 120, width: 120, crop: :fill %>" />
+            <% end %>
             <div class="card-product-infos w-100">
               <div class="d-flex justify-content-between">
                 <div>
-                  <h4><%= animal.name %></h4>
-                  <p><%= animal.species %></p>
+                  <h4><%= animal.name.capitalize %></h4>
+                  <p><%= animal.species.capitalize %></p>
                 </div>
                 <div class="w-25">
                     <div class="row text-center">
@@ -44,8 +48,8 @@
           <div class="card-product-infos w-100">
             <div class="d-flex justify-content-between">
               <div>
-                <h4><%= animal.name %></h4>
-                <p><%= animal.species %></p>
+                <h4><%= animal.name.capitalize %></h4>
+                <p><%= animal.species.capitalize %></p>
               </div>
               <div class="w-25">
                 <div class="row text-center">
@@ -67,8 +71,8 @@
           <div class="card-product-infos w-100">
             <div class="d-flex justify-content-between">
               <div>
-                <h4><%= booking.animal.name %></h4>
-                <p><%= booking.animal.species %></p>
+                <h4><%= booking.animal.name.capitalize %></h4>
+                <p><%= booking.animal.species.capitalize %></p>
               </div>
               <div class="w-25 text-center">
                 <p>Booked for <%= booking.date %></p>
