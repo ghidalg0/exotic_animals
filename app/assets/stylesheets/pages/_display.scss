@@ -64,6 +64,11 @@
   background-color: #019E89;
   color: white;
   opacity: 0.8;
+  width: 40px;
+  height: 40px;
+  i {
+    margin: auto;
+  };
 }
 
 .btn-reject {
@@ -73,6 +78,11 @@
   background-color: white;
   color: #e6b686;
   border: #e6b686 solid 1px;
+  width: 40px;
+  height: 40px;
+  i {
+    margin: auto;
+  };
 }
 
 .btn-accept:hover {
