@@ -3,18 +3,22 @@
 <h2 class='text-center my-5'>Find the animal you need</h2>
 
   <div class="index-cont">
+
     <div class="cards index-cards">
       <% @animals.each do |animal| %>
-        <div class="card-trip" >
-          <img src="<%= cl_image_path animal.photo.key %>" />
-          <div class="card-trip-infos">
-            <div>
-              <strong><%= link_to animal.name.capitalize, animal_path(animal), class: "name" %></strong>
-              <p><%= animal.category.capitalize %></p>
+
+            <div class="card-trip" >
+              <img src="<%= cl_image_path animal.photo.key %>" />
+              <div class="card-trip-infos">
+                <div>
+                  <strong><%= link_to animal.name.capitalize, animal_path(animal), class: "name" %></strong>
+                  <p><%= animal.category.capitalize %></p>
+                </div>
+                <P class="card-trip-pricing"><%= animal.location.capitalize %></p>
+              </div>
             </div>
-            <P class="card-trip-pricing"><%= animal.location.capitalize %></p>
-          </div>
-        </div>
+
+
       <% end %>
     </div>
 

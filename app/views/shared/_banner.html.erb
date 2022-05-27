@@ -20,18 +20,22 @@
             <h2>Find the Exotic Animal you need !</h2>
             <h2>Impress your friends with rare animals !</h2>
             <p>Exotica guarantees you the amazing experience you deserve</p>
-
-            <div id="search" class='search-exotica'>
-              <%= form_tag animals_path, method: :get, class: "search-content-exotica" do %>
-                <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-exotica",
-                  placeholder: "Find an animal"
-                %>
-                <%= button_tag :submit, class: "btn-search" do %>
-                  <i class="fas fa-search"></i>
-                  <% end %>
-              <% end %>
+            <div class="cont-home">
+              <div id="search" class='search-exotica'>
+                <%= form_tag animals_path, method: :get, class: "search-content-exotica" do %>
+                  <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-exotica",
+                    placeholder: "Find an animal"
+                  %>
+                  <%= button_tag :submit, class: "btn-search" do %>
+                    <i class="fas fa-search"></i>
+                    <% end %>
+                <% end %>
+              </div>
+              <div class='all-animals'>
+                <%= link_to "All animals",animals_path %>
+              </div>
             </div>
           </div>
 			<div class="content content--fox">

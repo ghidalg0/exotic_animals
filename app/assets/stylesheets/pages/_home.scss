@@ -41,3 +41,31 @@
 .index-cont {
   display: flex;
 }
+
+.cont-home {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.all-animals {
+  display: block;
+  padding: 15px 25px;
+  border-radius: 8px;
+  background-color: #019E89;
+  border: #019E89 solid 1px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.01);
+  opacity: 1;
+}
+
+.all-animals > a {
+  text-decoration: none;
+  color: white;
+}
+
+.all-animals:hover {
+  background-color: white;
+  a {
+    color: #019E89;
+  }
+}
