@@ -19,7 +19,9 @@
       <% else %>
         <%= render "shared/navbar" %>
       <% end %>
-      <%= yield %>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <% if params[:action] != "home" %>
