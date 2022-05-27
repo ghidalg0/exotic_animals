@@ -28,7 +28,7 @@
 
                   <% if b.status == "Pending" %>
 
-                    <div class="button-button" >
+                    <div>
                       <% if policy(b).accept_booking? %>
                         <%= link_to accept_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-accept" do %>
                         <i class="fa-solid fa-check"></i>
@@ -36,7 +36,7 @@
                       <% end %>
                     </div>
 
-                    <div class="button-button" >
+                    <div>
                       <% if policy(b).reject_booking? %>
                         <%= link_to reject_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-reject" do %>
                           <i class="fa-solid fa-xmark"></i>
