@@ -1,0 +1,52 @@
+.search-exotica {
+  border: #019E89 solid 1px;
+  padding: 5px 15px 5px 25px;
+  border-radius: 40px;
+  background-color: white;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.search-exotica-navbar {
+  border: #019E89 solid 1px;
+  padding: 5px 15px 5px 25px;
+  border-radius: 40px;
+  background-color: white;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.form-exotica {
+  border-radius: 8px;
+  border: none;
+  padding: 15px;
+  flex-grow: 1;
+  color: #019E89;
+}
+
+.form-exotica:focus {
+  text-decoration: none;
+  border: none;
+  transform-style: none;
+}
+
+.btn-search {
+  color: white;
+  background-color: #019E89;
+  border: #019E89 solid 1px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+}
+
+.btn-search:hover{
+  color: #019E89;
+  background-color: white;
+}
+
+.search-content-exotica {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
