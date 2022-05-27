@@ -1,8 +1,23 @@
 .center-btn {
   text-align: center;
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
 .center-btn > .btn-add {
-  padding: 20px 50px;
+  padding: 10px 50px;
+  width: 100%;
+  margin: 0;
+}
+
+.name {
+  width: 350px;
+}
+.location {
+  width: 350px;
+}
+.species {
+  width: 350px;
+}
+.category {
+  width: 350px;
 }
