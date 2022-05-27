@@ -27,7 +27,7 @@ box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 .btn-back {
   padding: 10px 20px;
   border: #a5a2a2 solid 1px;
-  background-color: #bab2b2;
+  background-color: transparent;
   color: black;
   text-decoration: none;
   border-radius: 50%;
@@ -38,11 +38,15 @@ box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .btn-back:hover {
-  color: white;
+  color: black;
   opacity: 1;
 }
 
 .animal-specs {
   padding-left: 120px;
   text-align: start;
+}
+
+.btn-add {
+  margin: 0 70px;
 }
