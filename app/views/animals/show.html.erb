@@ -25,35 +25,30 @@
       </div>
 
       <!-- Button trigger modal -->
-      <button type="button" class="btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Launch demo modal
-      </button>
+        <% if !(current_user == @animal.user) && user_signed_in? %>
+          <button type="button" class="btn-add" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Rent this animal
+          </button>
+          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">New Booking</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <%= simple_form_for [@animal, @booking] do |f| %>
+                    <%= f.input :date %>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">New Booking</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            <%= simple_form_for [@animal, @booking] do |f| %>
-                <%= f.input :date %>
-
-                <%= f.submit class: 'btn btn-add' %>
-              <% end %>
-            </div>
-            <div class="modal-footer">
+                    <%= f.submit class: 'btn btn-add' %>
+                  <% end %>
+                </div>
+                <div class="modal-footer">
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        <% end %>
     </div>
   </div>
 </div>
-
-
-
-
-<%# <%= link_to "Rent this animal", new_animal_booking_path(@animal), class: "btn-add" %>
