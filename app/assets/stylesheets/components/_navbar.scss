@@ -119,9 +119,23 @@ h1 {
 
 .dropdown-menu {
   border-radius: 4px;
+  padding: 10px;
+
 }
 
 a {
   text-decoration: none;
   text-transform: none;
+  text-align: center;
+  color: black;
+}
+
+.border-b {
+  border-bottom: 1px solid black;
+
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0;
 }
