@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h2 class='mt-5'>My dashboard</h2>
+  <h2 class='mt-5 text-center'>My dashboard</h2>
 
   <%= link_to animals_path, class:'btn-back' do %>
     <i class="fa-solid fa-angle-left"></i>
@@ -8,37 +8,48 @@
 
   <div class='dash-cont d-flex justify-content-between'>
   <div class="your_animals dash-animal ">
-    <br>
-    <h3>My animals</h3>
+    <h3 class='mb-3'>My animals</h3>
     <% @animals.each do |animal| %>
       <% if animal.bookings.length != 0 %>
         <% animal.bookings.each do |b| %>
           <div class="card-product">
             <img src="<%= cl_image_path animal.photo.key, height: 120, width: 120, crop: :fill %>" />
             <div class="card-product-infos w-100">
-              <div class="d-flex justify-content-between">
+              <div class="d-flex justify-content-between" >
                 <div>
                   <h4><%= animal.name.capitalize %></h4>
                   <p><%= animal.species.capitalize %></p>
                 </div>
-                <div class="w-25">
-                    <div class="row text-center">
-                      <p>Booking <%= b.status %> for <%= b.date %></p>
-                    </div>
-                    <div class="row">
+
+                <div class="animal-action w-50" >
+                  <div class="text-center">
+                    <p>Booking <%= b.status %> for <%= b.date %></p>
+                  </div>
+
+                  <% if b.status == "Pending" %>
+
+                    <div class="button-button" >
                       <% if policy(b).accept_booking? %>
-                        <%= link_to "Accept booking", accept_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-primary" %>
+                        <%= link_to accept_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-accept" do %>
+                        <i class="fa-solid fa-check"></i>
+                        <% end %>
                       <% end %>
                     </div>
-                    <div class="row">
+
+                    <div class="button-button" >
                       <% if policy(b).reject_booking? %>
-                        <%= link_to "Reject booking", reject_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-danger" %>
+                        <%= link_to reject_booking_path(b), data: {turbo_method: :patch}, class:"btn btn-reject" do %>
+                          <i class="fa-solid fa-xmark"></i>
+                        <% end %>
                       <% end %>
                     </div>
-                  </ul>
+
+                  <% end%>
                 </div>
+
               </div>
             </div>
+
           </div>
         <% end %>
       <% else %>
@@ -62,7 +73,7 @@
     <% end %>
   </div>
   <div class="your_animals dash-bookings ">
-    <h3>My bookings</h3>
+    <h3 class='mb-3'>My bookings</h3>
       <% @bookings.each do |booking|%>
         <div class="card-product">
         <img src="<%= cl_image_path booking.animal.photo.key, height: 120, width: 120, crop: :fill %>" />
