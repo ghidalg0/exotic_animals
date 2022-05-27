@@ -6,8 +6,8 @@
     <i class="fa-solid fa-angle-left"></i>
   <% end %>
 
-  <%# <div class='dash-cont d-flex'> %>
-  <div class="your_animals  ">
+  <div class='dash-cont d-flex justify-content-between'>
+  <div class="your_animals dash-animal ">
     <br>
     <h3>My animals</h3>
     <% @animals.each do |animal| %>
@@ -61,7 +61,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="your_animals  ">
+  <div class="your_animals dash-bookings ">
     <h3>My bookings</h3>
       <% @bookings.each do |booking|%>
         <div class="card-product">
