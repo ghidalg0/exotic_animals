@@ -1,13 +1,27 @@
 <div class="container mb-5">
   <%# <%= link_to "Back to home", root_path, class: 'btn btn-back' %>
-
-    <div class="form-container">
+    <%= link_to animals_path, class:'btn-back' do %>
+    <i class="fa-solid fa-angle-left"></i>
+  <% end %>
+    <div class="form-container mt-1">
       <h3>Add my Animal</h3>
       <%= simple_form_for(@animal) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :species %>
-        <%= f.input :category %>
-        <%= f.input :location %>
+        <div class="d-flex justify-content-between">
+        <div class="name">
+          <%= f.input :name, placeholder: "Ex: Albert" %>
+        </div>
+        <div class="location">
+          <%= f.input :location, placeholder: "Ex: Paris" %>
+        </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="species">
+            <%= f.input :species, placeholder: "Ex: Cow" %>
+          </div>
+          <div class="category">
+            <%= f.input :category, placeholder: "Ex: funny" %>
+          </div>
+        </div>
         <%= f.input :birthday %>
         <%= f.input :bio %>
         <%= f.input :photo, as: :file %>
