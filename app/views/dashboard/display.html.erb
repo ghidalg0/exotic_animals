@@ -1,21 +1,20 @@
 <div class="container">
 
-  <h2>My dashboard</h2>
+  <h2 class='mt-5'>My dashboard</h2>
 
   <%= link_to animals_path, class:'btn-back' do %>
     <i class="fa-solid fa-angle-left"></i>
   <% end %>
 
-  <div class="your_animals">
+  <%# <div class='dash-cont d-flex'> %>
+  <div class="your_animals  ">
     <br>
     <h3>My animals</h3>
     <% @animals.each do |animal| %>
       <% if animal.bookings.length != 0 %>
         <% animal.bookings.each do |b| %>
           <div class="card-product">
-            <%= link_to animal_path(animal), do %>
-              <img src="<%= cl_image_path animal.photo.key, height: 120, width: 120, crop: :fill %>" />
-            <% end %>
+            <img src="<%= cl_image_path animal.photo.key, height: 120, width: 120, crop: :fill %>" />
             <div class="card-product-infos w-100">
               <div class="d-flex justify-content-between">
                 <div>
@@ -62,8 +61,7 @@
       <% end %>
     <% end %>
   </div>
-  <br>
-  <div class="your_animals">
+  <div class="your_animals  ">
     <h3>My bookings</h3>
       <% @bookings.each do |booking|%>
         <div class="card-product">
@@ -84,4 +82,7 @@
       <% end %>
     </div>
   </div>
+
+  </div>
+
 </div>
